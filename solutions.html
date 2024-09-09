@@ -38,6 +38,20 @@
             border-radius: 5px;
             background-color: #f4f4f4;
         }
+
+        code {
+            background-color: #f5f2f0;
+            padding: .1em .2em;
+            color:#000;
+            text-shadow:0 1px #fff;
+            font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+            font-size:1em;
+            white-space:pre;
+            word-spacing:normal;
+            word-break:normal;
+            word-wrap:normal;
+            line-height:1.5;
+        }
     </style>
 </head>
 <body>
@@ -47,43 +61,48 @@
 
     <h2>1. Sélectionner Pikachu avec <code>getElementById()</code></h2>
     <p>Pour sélectionner Pikachu dans le DOM, on utilise la méthode <code>getElementById()</code>, qui renvoie l'élément
-        HTML ayant l'ID <code>pikachu</code>. Le code ci-dessous le sélectionne :</p>
+        HTML ayant l'ID <code>pikachu</code>.</p>
     <pre><code class="language-js">document.getElementById('pikachu');</code></pre>
 
-    <h2>2. Sélectionner Lokhlass avec <code>querySelector()</code> et changer sa couleur de fond en blanc</h2>
+    <h2>2. Sélectionner tous les Pokémon de <strong>type Eau</strong> avec <code>querySelectorAll()</code></h2>
+    <p>Pour sélectionner tous les Pokémon de type Eau, on utilise <code>querySelectorAll()</code> avec le sélecteur de
+        classe <code>.type-eau</code>. Cette méthode renvoie un tableau, <em>une NodeList pour être plus précis</em>, contenant tous les éléments correspondant à ce
+        sélecteur :</p>
+    <pre><code class="language-js">document.querySelectorAll('.type-eau');</code></pre>
+
+    <h2>3. Sélectionner Lokhlass avec <code>querySelector()</code> et changer sa couleur de fond en blanc</h2>
     <p>La méthode <code>querySelector()</code> permet de sélectionner un élément en utilisant des sélecteurs CSS. Ici,
         on sélectionne Lokhlass par son ID <code>lokhlass</code> et on change sa couleur de fond à l'aide de la
         propriété <code>style.backgroundColor</code> :</p>
     <pre><code class="language-js">let lokhlass = document.querySelector('#lokhlass');
 lokhlass.style.backgroundColor = 'white';</code></pre>
 
-    <h2>3. Sélectionner tous les Pokémon de <strong>type Eau</strong> avec <code>querySelectorAll()</code></h2>
-    <p>Pour sélectionner tous les Pokémon de type Eau, on utilise <code>querySelectorAll()</code> avec le sélecteur de
-        classe <code>.type-eau</code>. Cette méthode renvoie une NodeList contenant tous les éléments correspondant à ce
-        sélecteur :</p>
-    <pre><code class="language-js">let waterPokemon = document.querySelectorAll('.type-eau');</code></pre>
-
     <h2>4. Sélectionner tous les titres <code>&lt;h2&gt;</code> des Pokémon et changer leur contenu par "Pika Pika"</h2>
     <p>Pour modifier le texte de tous les titres <code>&lt;h2&gt;</code> des cartes Pokémon, on sélectionne chaque titre
         à l'intérieur des cartes Pokémon en utilisant <code>querySelectorAll()</code>. Ensuite, on utilise une boucle
-        <code>forEach()</code> pour remplacer le texte par "Pika Pika" :</p>
-    <pre><code class="language-js">let allTitles = document.querySelectorAll('.pokemon h2');
-allTitles.forEach(title => {
-    title.textContent = 'Pika Pika';
-});</code></pre>
+        <code>for...of</code> pour remplacer le texte par "Pika Pika" :</p>
+    <pre><code class="language-js">let h2Pokemons  = document.querySelectorAll('.pokemon h2');
+
+for (h2 of h2Pokemons) {
+    h2.textContent = 'Pika Pika';
+}</code></pre>
 
     <h2>5. Supprimer tous les paragraphes <code>&lt;p&gt;</code> des cartes Pokémon</h2>
     <p>Pour supprimer tous les éléments <code>&lt;p&gt;</code> contenus dans les cartes Pokémon, on les sélectionne avec
-        <code>querySelectorAll()</code> et on les parcourt avec <code>forEach()</code> pour les retirer du DOM en
+        <code>querySelectorAll()</code> et on les parcourt avec <code>for...of</code> pour les retirer du DOM en
         utilisant <code>remove()</code> :</p>
-    <pre><code class="language-js">let allParagraphs = document.querySelectorAll('.pokemon p');
-allParagraphs.forEach(p => p.remove());</code></pre>
+    <pre><code class="language-js">let paraPokemons = document.querySelectorAll('.pokemon p');
+
+for (para of paraPokemons) {
+    para => para.remove()
+};</code></pre>
 
     <h2>6. Ajouter Raichu de type Électrique</h2>
-    <p>Pour ajouter une carte Pokémon pour Raichu, on crée un nouvel élément <code>&lt;div&gt;</code> dynamiquement avec
-        <code>document.createElement()</code>. Ensuite, on lui ajoute les classes <code>pokemon</code> et <code>type-electrique</code>,
-        puis on définit son contenu HTML. Enfin, on l'ajoute à la liste des Pokémon en l'attachant à l'élément <code>.pokemon-container</code>
-        :</p>
+    <p>Pour ajouter une carte Pokémon pour Raichu, on créer le code HTML de la carte et on la stoque dans une variable.
+        Il ne faut pas oublier d'ajouter les classes <code>pokemon</code> et <code>type-electrique</code>.
+        Enfin, on l'ajoute à la fin <code>+=</code> du code HTML existant <code>.innerHTML</code> de l'élément
+        <code>.pokemon-container</code> que l'on récupère avec un sélecteur <code>querySelector()</code>.
+    </p>
     <pre><code class="language-js">let raichu = `
     &lt;div class="pokemon type-electrique" id="raichu"&gt;
         &lt;img src="./images/raichu.png" alt="Raichu"&gt;
@@ -91,6 +110,7 @@ allParagraphs.forEach(p => p.remove());</code></pre>
         &lt;p class="description"&gt;Type : Électrique&lt;/p&gt;
     &lt;/div&gt;
 `;
+
 document.querySelector('.pokemon-container').innerHTML += raichu;
 </code></pre>
 
