@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprends JavaScript avec Pokémon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <h1>Attrape les tous !</h1>
+
+        <!-- Instructions -->
+        <h2>Instructions</h2>
+        <p>Voici un exemple du code HTML d'un Pokémon :</p>
+        <pre>&lt;div class="pokemon type-plante type-poison" id="bulbizarre"&gt;
+    &lt;img src="./images/bulbizarre.png" alt="Bulbizarre"&gt;
+    &lt;h2 class="pokemon-name"&gt;Bulbizarre&lt;/h2&gt;
+    &lt;p class="description"&gt;Type : Plante/Poison&lt;/p&gt;
+&lt;/div&gt;</pre>
+        <div class="objectifs">
+            <!-- Objectifs -->
+            <h2>Objectifs de l'exercice</h2>
+            <ol>
+                <li>Sélectionner Pikachu avec <code>document.getElementById()</code></li>
+                <li>Sélectionner Lokhlass avec <code>document.querySelector()</code> et changer sa couleur de fond en
+                    blanc
+                </li>
+                <li>Sélectionner tous les Pokémon de <strong>type eau</strong> avec <code>document.querySelectorAll()</code></li>
+                <li>Sélectionner tous les titres <code>&lt;h2&gt;</code> des Pokémon (pas de tout le document) et
+                    changer leur contenu par <code>"Pika
+                        Pika"</code></li>
+                <li>Supprimer tous les paragraphes <code>&lt;p&gt;</code> contenus dans les cartes Pokémon</li>
+                <li>Ajoute <strong>Raichu</strong> qui est de <strong>type Électrique</strong>.
+                    Le nom de son image <code>raichu.png</code>.<br>
+                Les pokémons sont contenus dans : <code>&lt;div class="pokemon-container"&gt;</code></li>
+            </ol>
+        </div>
+        <h2>Liste des pokémons</h2>
+        <!-- Pokémon list -->
+        <div class="pokemon-container">
+            <div class="pokemon type-electrique" id="pikachu">
+                <img src="./images/pikachu.png" alt="Pikachu">
+                <h2 class="pokemon-name">Pikachu</h2>
+                <p class="description">Type : Électrique</p>
+            </div>
+
+            <div class="pokemon type-eau type-glace" id="lokhlass">
+                <img src="./images/lokhlass.png" alt="Lokhlass">
+                <h2 class="pokemon-name">Lokhlass</h2>
+                <p class="description">Type : Eau / Glace</p>
+            </div>
+
+            <div class="pokemon type-plante type-poison" id="bulbizarre">
+                <img src="./images/bulbizarre.png" alt="Bulbizarre">
+                <h2 class="pokemon-name">Bulbizarre</h2>
+                <p class="description">Type : Plante/Poison</p>
+            </div>
+
+            <div class="pokemon type-eau" id="carapuce">
+                <img src="./images/carapuce.png" alt="Carapuce">
+                <h2 class="pokemon-name">Carapuce</h2>
+                <p class="description">Type : Eau</p>
+            </div>
+
+            <div class="pokemon type-feu" id="salameche">
+                <img src="./images/salameche.png" alt="Salamèche">
+                <h2 class="pokemon-name">Salamèche</h2>
+                <p class="description">Type : Feu</p>
+            </div>
+
+            <div class="pokemon type-eau" id="roucool">
+                <img src="./images/tortank.png" alt="Tortank">
+                <h2 class="pokemon-name">Tortank</h2>
+                <p class="description">Type : Eau</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+        <h2>Essaye de les attraper !</h2>
+        <textarea id="command-input" placeholder="Saisis ta commande ici..."></textarea>
+        <button onclick="executeCommand()">Exécuter</button>
+        <h2>Tes captures</h2>
+        <div id="output"></div>
+    </div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
