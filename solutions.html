@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - Pokemon JS Catch</title>
+
+    <!-- Inclure Prism.js CSS pour le style -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+
+    <!-- Inclure le plugin "Copy to Clipboard" -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-top: 2em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1.2rem;
+        }
+
+        pre {
+            position: relative;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Solutions - Pokemon JavaScript Catch</h1>
+
+    <h2>1. Sélectionner Pikachu avec <code>getElementById()</code></h2>
+    <p>Pour sélectionner Pikachu dans le DOM, on utilise la méthode <code>getElementById()</code>, qui renvoie l'élément
+        HTML ayant l'ID <code>pikachu</code>. Le code ci-dessous le sélectionne :</p>
+    <pre><code class="language-js">document.getElementById('pikachu');</code></pre>
+
+    <h2>2. Sélectionner Lokhlass avec <code>querySelector()</code> et changer sa couleur de fond en blanc</h2>
+    <p>La méthode <code>querySelector()</code> permet de sélectionner un élément en utilisant des sélecteurs CSS. Ici,
+        on sélectionne Lokhlass par son ID <code>lokhlass</code> et on change sa couleur de fond à l'aide de la
+        propriété <code>style.backgroundColor</code> :</p>
+    <pre><code class="language-js">let lokhlass = document.querySelector('#lokhlass');
+lokhlass.style.backgroundColor = 'white';</code></pre>
+
+    <h2>3. Sélectionner tous les Pokémon de <strong>type Eau</strong> avec <code>querySelectorAll()</code></h2>
+    <p>Pour sélectionner tous les Pokémon de type Eau, on utilise <code>querySelectorAll()</code> avec le sélecteur de
+        classe <code>.type-eau</code>. Cette méthode renvoie une NodeList contenant tous les éléments correspondant à ce
+        sélecteur :</p>
+    <pre><code class="language-js">let waterPokemon = document.querySelectorAll('.type-eau');</code></pre>
+
+    <h2>4. Sélectionner tous les titres <code>&lt;h2&gt;</code> des Pokémon et changer leur contenu par "Pika Pika"</h2>
+    <p>Pour modifier le texte de tous les titres <code>&lt;h2&gt;</code> des cartes Pokémon, on sélectionne chaque titre
+        à l'intérieur des cartes Pokémon en utilisant <code>querySelectorAll()</code>. Ensuite, on utilise une boucle
+        <code>forEach()</code> pour remplacer le texte par "Pika Pika" :</p>
+    <pre><code class="language-js">let allTitles = document.querySelectorAll('.pokemon h2');
+allTitles.forEach(title => {
+    title.textContent = 'Pika Pika';
+});</code></pre>
+
+    <h2>5. Supprimer tous les paragraphes <code>&lt;p&gt;</code> des cartes Pokémon</h2>
+    <p>Pour supprimer tous les éléments <code>&lt;p&gt;</code> contenus dans les cartes Pokémon, on les sélectionne avec
+        <code>querySelectorAll()</code> et on les parcourt avec <code>forEach()</code> pour les retirer du DOM en
+        utilisant <code>remove()</code> :</p>
+    <pre><code class="language-js">let allParagraphs = document.querySelectorAll('.pokemon p');
+allParagraphs.forEach(p => p.remove());</code></pre>
+
+    <h2>6. Ajouter Raichu de type Électrique</h2>
+    <p>Pour ajouter une carte Pokémon pour Raichu, on crée un nouvel élément <code>&lt;div&gt;</code> dynamiquement avec
+        <code>document.createElement()</code>. Ensuite, on lui ajoute les classes <code>pokemon</code> et <code>type-electrique</code>,
+        puis on définit son contenu HTML. Enfin, on l'ajoute à la liste des Pokémon en l'attachant à l'élément <code>.pokemon-container</code>
+        :</p>
+    <pre><code class="language-js">let raichu = `
+    &lt;div class="pokemon type-electrique" id="raichu"&gt;
+        &lt;img src="./images/raichu.png" alt="Raichu"&gt;
+        &lt;h2 class="pokemon-name"&gt;Raichu&lt;/h2&gt;
+        &lt;p class="description"&gt;Type : Électrique&lt;/p&gt;
+    &lt;/div&gt;
+`;
+document.querySelector('.pokemon-container').innerHTML += raichu;
+</code></pre>
+
+</div>
+
+<!-- Inclure Prism.js JS et le plugin "Copy to Clipboard" -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+
+</body>
+</html>
