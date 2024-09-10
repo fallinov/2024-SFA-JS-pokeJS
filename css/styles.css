@@ -39,6 +39,11 @@ p {
     margin-bottom: 1em;
 }
 
+a {
+    color: var(--color-principal);
+    text-decoration: none;
+}
+
 a[target="_blank"]::after {
     content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
     margin: 0 3px 0 5px;
@@ -55,7 +60,7 @@ li {
 }
 
 code {
-    background-color: var(--color-warning);
+    background-color: var(--color-success);
     padding: .2em .4em;
 }
 
