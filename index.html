@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon JS Catch</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="prism/prism.css" rel="stylesheet" />
 </head>
 <body>
-<div class="container">
+<div class="page-js-catch">
     <!-- Left Panel -->
     <div class="left-panel">
         <h1>Pokemon JavaScript Catch</h1>
@@ -17,11 +18,11 @@
         <!-- Instructions -->
         <h2>Instructions</h2>
         <p>Voici un exemple du code HTML d'un Pokémon :</p>
-        <pre>&lt;div class="pokemon type-plante type-poison" id="bulbizarre"&gt;
+        <pre><code class="language-js">&lt;div class="pokemon type-plante type-poison" id="bulbizarre"&gt;
     &lt;img src="./images/bulbizarre.png" alt="Bulbizarre"&gt;
     &lt;h2 class="pokemon-name"&gt;Bulbizarre&lt;/h2&gt;
-    &lt;p class="description"&gt;Type : Plante/Poison&lt;/p&gt;
-&lt;/div&gt;</pre>
+    &lt;p class="description"&gt;Plante/Poison&lt;/p&gt;
+&lt;/div&gt;</code></pre>
         <div class="objectifs">
             <!-- Objectifs -->
             <h2>Objectifs de l'exercice</h2>
@@ -46,37 +47,37 @@
             <div class="pokemon type-electrique" id="pikachu">
                 <img src="./images/pikachu.png" alt="Pikachu">
                 <h2 class="pokemon-name">Pikachu</h2>
-                <p class="description">Type : Électrique</p>
+                <p class="description">Électrique</p>
             </div>
 
             <div class="pokemon type-eau type-glace" id="lokhlass">
                 <img src="./images/lokhlass.png" alt="Lokhlass">
                 <h2 class="pokemon-name">Lokhlass</h2>
-                <p class="description">Type : Eau / Glace</p>
+                <p class="description">Eau / Glace</p>
             </div>
 
             <div class="pokemon type-plante type-poison" id="bulbizarre">
                 <img src="./images/bulbizarre.png" alt="Bulbizarre">
                 <h2 class="pokemon-name">Bulbizarre</h2>
-                <p class="description">Type : Plante/Poison</p>
+                <p class="description">Plante / Poison</p>
             </div>
 
             <div class="pokemon type-eau" id="carapuce">
                 <img src="./images/carapuce.png" alt="Carapuce">
                 <h2 class="pokemon-name">Carapuce</h2>
-                <p class="description">Type : Eau</p>
+                <p class="description">Eau</p>
             </div>
 
             <div class="pokemon type-feu" id="salameche">
                 <img src="./images/salameche.png" alt="Salamèche">
                 <h2 class="pokemon-name">Salamèche</h2>
-                <p class="description">Type : Feu</p>
+                <p class="description">Feu</p>
             </div>
 
             <div class="pokemon type-eau" id="roucool">
                 <img src="./images/tortank.png" alt="Tortank">
                 <h2 class="pokemon-name">Tortank</h2>
-                <p class="description">Type : Eau</p>
+                <p class="description">Eau</p>
             </div>
         </div>
     </div>
@@ -88,7 +89,9 @@
         <p>Si tu as besoin d'aide, tu peux <a href="solutions.html" target="_blank">consulter les solutions</a>.</p>
         <textarea id="command-input" class="prism-live language-js fill" placeholder="Saisis ta commande ici..."></textarea>
         <button onclick="executeCommand()">Exécuter</button>
-        <h2>Tes captures</h2>
+
+        <h2>Tes captures (retour de ton code)</h2>
+        <p>Affiche le résultat de ton code. Si tu as attrapé un Pokémon, il apparaîtra ici !</p>
         <div id="output"></div>
     </div>
 </div>

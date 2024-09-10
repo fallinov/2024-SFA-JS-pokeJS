@@ -5,55 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <title>Solutions - Pokemon JS Catch</title>
-
-    <!-- Inclure Prism.js CSS pour le style -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="prism/prism.css" rel="stylesheet" />
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        h2 {
-            margin-top: 2em;
-        }
-
-        p {
-            margin-bottom: 1em;
-            font-size: 1.2rem;
-        }
-
-        pre {
-            position: relative;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #f4f4f4;
-        }
-
-        code {
-            background-color: #f5f2f0;
-            padding: .1em .2em;
-            color:#000;
-            text-shadow:0 1px #fff;
-            font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
-            font-size:1em;
-            white-space:pre;
-            word-spacing:normal;
-            word-break:normal;
-            word-wrap:normal;
-            line-height:1.5;
-        }
-    </style>
 </head>
 <body>
 
-<div class="container">
+<div class="page-solutions">
     <h1>Solutions - Pokemon JavaScript Catch</h1>
     <p>Revenir à l'exercice : <a href="index.html">Pokemon JavaScript Catch</a></p>
     <h2>1. Sélectionner Pikachu avec <code>getElementById()</code></h2>
@@ -104,17 +62,13 @@ for (para of paraPokemons) {
     &lt;div class="pokemon type-electrique" id="raichu"&gt;
         &lt;img src="./images/raichu.png" alt="Raichu"&gt;
         &lt;h2 class="pokemon-name"&gt;Raichu&lt;/h2&gt;
-        &lt;p class="description"&gt;Type : Électrique&lt;/p&gt;
+        &lt;p class="description"&gt;Électrique&lt;/p&gt;
     &lt;/div&gt;
 `;
 
 document.querySelector('.pokemon-container').innerHTML += raichu;
 </code></pre>
-
 </div>
-
 <script src="prism/prism.js"></script>
-
-
 </body>
 </html>
