@@ -1,3 +1,6 @@
+/**
+ * Exécuter la commande saisie par l'utilisateur
+ */
 function executeCommand() {
     const command = document.getElementById('command-input').value;
 

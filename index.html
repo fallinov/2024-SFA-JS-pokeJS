@@ -37,7 +37,7 @@
                 <li>Supprimer tous les paragraphes <code>&lt;p&gt;</code> contenus dans les cartes Pokémon</li>
                 <li>Ajoute <strong>Raichu</strong> qui est de <strong>type Électrique</strong>.
                     Le nom de son image <code>raichu.png</code>.<br>
-                Les pokémons sont contenus dans : <code>&lt;div class="pokemon-container"&gt;</code></li>
+                    Les pokémons sont contenus dans : <code>&lt;div class="pokemon-container"&gt;</code></li>
             </ol>
         </div>
         <h2>Liste des pokémons</h2>
@@ -84,13 +84,17 @@
     <!-- Right Panel -->
     <div class="right-panel">
         <h2><label for="command-input">Essaye de les attraper !</label></h2>
-        <textarea id="command-input" placeholder="Saisis ta commande ici..."></textarea>
+        <p>Écris ton code JavaScript dans la zone de texte ci-dessous pour attraper les Pokémons !</p>
+        <p>Si tu as besoin d'aide, tu peux <a href="solutions.html" target="_blank">consulter les solutions</a>.</p>
+        <textarea id="command-input" class="prism-live language-js fill" placeholder="Saisis ta commande ici..."></textarea>
         <button onclick="executeCommand()">Exécuter</button>
         <h2>Tes captures</h2>
         <div id="output"></div>
     </div>
 </div>
-<script src="scripts.js"></script>
+<script src="https://blissfuljs.com/bliss.shy.min.js"></script>
 <script src="prism/prism.js"></script>
+<script src="prism/prism-live.js?load=markup,css,javascript"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
